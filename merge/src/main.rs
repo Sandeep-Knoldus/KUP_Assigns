@@ -45,7 +45,7 @@ fn merge_sort(mut arr: Vec<i32>, left: usize, right: usize) -> Vec<i32> {
 }
 
 fn main() {
-    let mut arr: Vec<i32> = vec![64, 34, 25, 8, 22, 11, 9];
+    let mut arr: Vec<i32> = vec![94, 1, 119, -87, 50, 43, 48];
     arr = merge_sort(arr.clone(), 0, arr.len());
     println!("Sorted array is {:?}", arr);
 }
