@@ -29,16 +29,15 @@ pub fn binary_search<T: PartialEq + PartialOrd>(item: &T, arr: &[T]) -> i32 {
     }
 }
 fn main() {
-    let index = binary_search(&43, &vec![25, 62, 29, 43, 77]);
+    let index = binary_search(&43, &vec![117, 66, 88, -12, 43, 50]);
     if index >= 0 {
         println!("Element found at position: {}", index);
     }
     else {
         println!("Element not found");
     }
-    //println!("Position: {}", index);
 
-    let index = binary_search(&855, &vec![25, 62, 29, 43, 77]);
+    let index = binary_search(&855, &vec![10, 1, 57, -44, 90, 31]);
     if index >= 0 {
         println!("Position: {}", index);
     }
