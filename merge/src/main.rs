@@ -1,33 +1,32 @@
-#![allow(non_snake_case)]
 fn merge(mut arr: Vec<i32>, left: usize, mid: usize, right: usize) -> Vec<i32> {
     let n1 = mid - left;
     let n2 = right - mid;
-    let  L1 = arr.clone();
-    let  R1 = arr.clone();
-    let L = &L1[left..mid];
-    let R = &R1[mid..right];
+    let  l1 = arr.clone();
+    let  r1 = arr.clone();
+    let l = &l1[left..mid];
+    let r = &r1[mid..right];
     
     let mut i = 0; 
     let mut j = 0; 
     let mut k = left; 
     while i < n1 && j < n2 {
-        if L[i] < R[j] {
-            arr[k] = L[i];
+        if l[i] < r[j] {
+            arr[k] = l[i];
             i = i + 1;
         } else {
-            arr[k] = R[j];
+            arr[k] = r[j];
             j = j + 1;
         }
         k = k + 1;
     }
     while i < n1 {
-        arr[k] = L[i];
+        arr[k] = l[i];
         i = i + 1;
         k = k + 1;
     }
     
     while j < n2 {
-        arr[k] = R[j];
+        arr[k] = r[j];
         j = j + 1;
         k = k + 1;
     }
