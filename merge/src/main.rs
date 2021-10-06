@@ -1,34 +1,34 @@
 fn merge(mut arr: Vec<i32>, left: usize, mid: usize, right: usize) -> Vec<i32> {
-    let n1 = mid - left;
-    let n2 = right - mid;
-    let  l1 = arr.clone();
-    let  r1 = arr.clone();
-    let l = &l1[left..mid];
-    let r = &r1[mid..right];
+    let array1 = mid - left;
+    let array2 = right - mid;
+    let new_array1 = arr.clone();
+    let new_array2 = arr.clone();
+    let final_array1 = &new_array1[left..mid];
+    let final_array2 = &new_array2[mid..right];
     
-    let mut i = 0; 
-    let mut j = 0; 
-    let mut k = left; 
-    while i < n1 && j < n2 {
-        if l[i] < r[j] {
-            arr[k] = l[i];
-            i = i + 1;
+    let mut loop1 = 0; 
+    let mut loop2 = 0; 
+    let mut arr_body = left; 
+    while loop1 < array1 && loop2 < array2 {
+        if final_array1[loop1] < final_array2[loop2] {
+            arr[arr_body] = final_array1[loop1];
+            loop1 = loop1 + 1;
         } else {
-            arr[k] = r[j];
-            j = j + 1;
+            arr[arr_body] = final_array2[loop2];
+            loop2 = loop2 + 1;
         }
-        k = k + 1;
+        arr_body = arr_body + 1;
     }
-    while i < n1 {
-        arr[k] = l[i];
-        i = i + 1;
-        k = k + 1;
+    while loop1 < array1 {
+        arr[arr_body] = final_array1[loop1];
+        loop1 = loop1 + 1;
+        arr_body = arr_body + 1;
     }
     
-    while j < n2 {
-        arr[k] = r[j];
-        j = j + 1;
-        k = k + 1;
+    while loop2 < array2 {
+        arr[arr_body] = final_array2[loop2];
+        loop2 = loop2 + 1;
+        arr_body = arr_body + 1;
     }
     arr
 }
