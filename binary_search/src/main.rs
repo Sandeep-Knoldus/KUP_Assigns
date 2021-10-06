@@ -1,4 +1,4 @@
-pub fn binary_search<T: PartialEq + PartialOrd>(item: &T, arr: &[T]) -> i32 {
+fn binary_search(item: &i32, arr: &[i32]) -> i32 {
     let mut idx_pos = -1;
 
     if arr.is_empty() {
@@ -29,17 +29,12 @@ pub fn binary_search<T: PartialEq + PartialOrd>(item: &T, arr: &[T]) -> i32 {
     }
 }
 fn main() {
-    let index = binary_search(&43, &vec![117, 66, 88, -12, 43, 50]);
+    let item = -17;
+    let arr: [i32; 6] = [77, 25, -17, 1, 48, 7];
+    let index = binary_search(&item, &arr);
+
     if index >= 0 {
         println!("Element found at position: {}", index);
-    }
-    else {
-        println!("Element not found");
-    }
-
-    let index = binary_search(&855, &vec![10, 1, 57, -44, 90, 31]);
-    if index >= 0 {
-        println!("Position: {}", index);
     }
     else {
         println!("Element not found");
