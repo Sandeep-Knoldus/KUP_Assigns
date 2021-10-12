@@ -1,3 +1,4 @@
+#[derive(Debug)]
 struct Student {
     name: String,
     roll_no: i32,
@@ -13,21 +14,14 @@ struct Score {
     science: f32,
 }
 
-fn new(){
-    let student1 = Student {
-        name: String::from("Sandeep"),
-        roll_no: 44,
-        score_of_each_subject: 67,
-        department: String::from("CSE"),
-        school: String::from("AEC"),
-    };
-    let student2 = Student {
-        name: String::from("Suman"),
-        roll_no: 38,
-        score_of_each_subject: 32,
-        department: String::from("CSE"),
-        school: String::from("KIIT"),
-    };
+fn new(name: String, roll_no: i32, score_of_each_subject: i32, department: String, school: String) -> Student {
+    Student {
+        name: name,
+        roll_no: roll_no,
+        score_of_each_subject: score_of_each_subject,
+        department: department,
+        school: school,
+    }
 }
 
 fn get_average(average: &Score) -> f32{
@@ -90,7 +84,6 @@ impl Score {
         else {
             println!("Student_2 has higher marks in Science by: {}", other.science - self.science);
         }
-
     }
 }
 
@@ -144,4 +137,8 @@ fn main() {
 
     println!();
     student1_score.compare_student(&student2_score);
+
+    println!();
+    println!("Student_1: {:?}",new(String::from("Sandeep"), 44, 67, String::from("CSE"), String::from("AEC")));
+    println!("Student_2: {:?}",new(String::from("Suman"), 38, 32, String::from("CSE"), String::from("KIIT")));
 }
