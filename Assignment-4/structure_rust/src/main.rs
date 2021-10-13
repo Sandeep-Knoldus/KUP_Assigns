@@ -64,7 +64,7 @@ fn get_average(average: &Score) -> f32 {
 //
 // #Return
 //
-// Return the array of new marks stored in it
+// Return the array of new scores stored in it
 fn pass_student(marks: &Score) -> [f32; 4] {
     let mut arr: [f32; 4] = [marks.hindi, marks.english, marks.maths, marks.science];
 
@@ -155,6 +155,7 @@ impl Score {
 
 // Main function
 fn main() {
+    // Specifying scores of student1
     let mut student1_score = Score {
         hindi: 32.0,
         english: 72.0,
@@ -162,6 +163,7 @@ fn main() {
         science: 83.0,
     };
 
+    // Specifying scores of student2
     let mut student2_score = Score {
         hindi: 18.0,
         english: 68.0,
@@ -169,13 +171,16 @@ fn main() {
         science: 35.0,
     };
 
-    let arr1 = [
+    // Storing present scores of student1 to arr1
+    let mut arr1 = [
         student1_score.hindi,
         student1_score.english,
         student1_score.maths,
         student1_score.science,
     ];
-    let arr2 = [
+
+    // Storing present scores of student2 to arr2
+    let mut arr2 = [
         student2_score.hindi,
         student2_score.english,
         student2_score.maths,
@@ -188,24 +193,29 @@ fn main() {
     println!("Average of Student_1: {}", get_average(&student1_score));
     println!("Average of Student_2: {}", get_average(&student2_score));
 
-    let array1: [f32; 4] = pass_student(&student1_score);
-    let array2: [f32; 4] = pass_student(&student2_score);
-    println!();
-    println!("New scores of Student_1: {:?}", array1);
-    println!("New scores of Student_2: {:?}", array2);
+    // Replacing arr1 with new scores of student1
+    arr1 = pass_student(&student1_score);
 
+    // Replacing arr2 with new scores of student2
+    arr2 = pass_student(&student2_score);
+    println!();
+    println!("New scores of Student_1: {:?}", arr1);
+    println!("New scores of Student_2: {:?}", arr2);
+
+    // Specifying new scores to student1
     student1_score = Score {
-        hindi: array1[0],
-        english: array1[1],
-        maths: array1[2],
-        science: array1[3],
+        hindi: arr1[0],
+        english: arr1[1],
+        maths: arr1[2],
+        science: arr1[3],
     };
 
+    // Specifying new scores to student2
     student2_score = Score {
-        hindi: array2[0],
-        english: array2[1],
-        maths: array2[2],
-        science: array2[3],
+        hindi: arr2[0],
+        english: arr2[1],
+        maths: arr2[2],
+        science: arr2[3],
     };
 
     println!();
