@@ -52,13 +52,20 @@ impl Numbers {
 
 // Main function
 fn main() {
+    // Specifying values for each fields
     let numbers = Numbers {
         first_number: 30,
         second_number: 50,
     };
 
-    println!("The Addition of the numbers are: {}", numbers.add());
-    println!("The Subtraction of the numbers are: {}", numbers.subtract());
+    println!(
+        "The Addition of the numbers are: {}", 
+        numbers.add()
+    );
+    println!(
+        "The Subtraction of the numbers are: {}", 
+        numbers.subtract()
+    );
     println!(
         "The Multiplication of the numbers are: {}",
         numbers.multiply()
