@@ -4,11 +4,12 @@
 struct Student {
     name: String,
     roll_no: i32,
-    score_of_each_subject: i32,
+    score_of_each_subject: Score,
     department: String,
     school: String,
 }
 
+#[derive(Debug)]
 // Score Structure
 struct Score {
     hindi: f32,
@@ -26,10 +27,11 @@ struct Score {
 // #Return
 //
 // Return the Student type objects
+
 fn new(
     name: String,
     roll_no: i32,
-    score_of_each_subject: i32,
+    score_of_each_subject: Score,
     department: String,
     school: String,
 ) -> Student {
@@ -231,7 +233,7 @@ fn main() {
         new(
             String::from("Sandeep"),
             44,
-            67,
+            student1_score,
             String::from("CSE"),
             String::from("AEC")
         )
@@ -241,7 +243,7 @@ fn main() {
         new(
             String::from("Suman"),
             38,
-            32,
+            student2_score,
             String::from("CSE"),
             String::from("KIIT")
         )
