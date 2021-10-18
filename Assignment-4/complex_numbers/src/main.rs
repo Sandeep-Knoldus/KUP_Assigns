@@ -6,7 +6,7 @@ struct Numbers {
 
 // Implmenting Numbers Structure
 impl Numbers {
-    // This method adds numbers using structures to function
+    // Function "add" adds numbers using structures to function
     //
     // #Arguments
     //
@@ -19,7 +19,7 @@ impl Numbers {
         self.first_number + self.second_number
     }
 
-    // This method substract numbers using structures to function
+    // Function "subtract" substract numbers using structures to function
     //
     // #Arguments
     //
@@ -36,7 +36,7 @@ impl Numbers {
         }
     }
 
-    // This method multiplies numbers using structures to function
+    // Function "multiply" multiplies numbers using structures to function
     //
     // #Arguments
     //
