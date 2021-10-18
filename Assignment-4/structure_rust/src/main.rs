@@ -17,7 +17,7 @@ struct Score {
     science: f32,
 }
 
-// This method initializes Student objects
+// Function "new" initializes Student objects
 //
 // #Arguments
 //
@@ -42,7 +42,7 @@ fn new(
     }
 }
 
-// This method is to get average of all scores
+// Function "get_average" is to get average of all scores
 //
 // #Arguments
 //
@@ -56,7 +56,7 @@ fn get_average(average: &Score) -> f32 {
     avg
 }
 
-// This method add numbers to student's score if score < 35
+// Function "pass_student" add numbers to student's score if score < 35
 //
 // #Arguments
 //
@@ -93,7 +93,7 @@ fn pass_student(marks: &Score) -> [f32; 4] {
 
 // Implementing Score Structure
 impl Score {
-    // This method is to print difference of each subject's score b/w students
+    // Function "compare_student" is to print difference of each subject's score b/w students
     //
     // #Arguments
     //
